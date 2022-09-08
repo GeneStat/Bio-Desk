@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api:
+    build: ./api-gateway
+    volumes:
+      - ./api-gateway:/usr/src/app
+    ports:
+      - 5001:5001
+  
+
+  website:
+    build: ./data-clean
+    volumes:
+      - ./data-clean:/usr/src/app
+    ports:
+      - 5000:5000
